@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="LibraryDataBinding">
+
+        <variable
+            name="viewModel"
+            type="net.rmitsolutions.eskool.models.Library" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding">
+
+        <ImageView
+            android:id="@+id/itemStatusIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src='@{viewModel.imgSrc, default=@drawable/ic_library_books_green}'
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/itemName"
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing4dp"
+            android:text='@{viewModel.itemName, default="Book Name"}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/itemStatusIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/itemPublisher"
+            style="@style/DescriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing8dp"
+            android:layout_marginTop="@dimen/spacing8dp"
+            android:gravity="center_vertical"
+            android:text='@{viewModel.itemPublisher, default="Publisher Name"}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemName" />
+
+        <ImageView
+            android:id="@+id/itemReceivedIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing8dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_call_received"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemPublisher" />
+
+        <TextView
+            android:id="@+id/itemIssueDate"
+            style="@style/DescriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing2dp"
+            android:layout_marginTop="@dimen/spacing8dp"
+            android:gravity="center_vertical"
+            android:text='@{viewModel.displayIssueDate, default="Checkout Date"}'
+            app:layout_constraintStart_toEndOf="@+id/itemReceivedIcon"
+            app:layout_constraintTop_toBottomOf="@+id/itemPublisher" />
+
+        <ImageView
+            android:id="@+id/itemDueIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing8dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_timer_sand"
+            app:layout_constraintEnd_toStartOf="@id/itemDueDate"
+            app:layout_constraintTop_toBottomOf="@+id/itemPublisher" />
+
+        <TextView
+            android:id="@+id/itemDueDate"
+            style="@style/DescriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing6dp"
+            android:layout_marginTop="@dimen/spacing8dp"
+            android:gravity="center_vertical"
+            android:text='@{viewModel.displayDueDate, default="Check-in Date"}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemPublisher" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

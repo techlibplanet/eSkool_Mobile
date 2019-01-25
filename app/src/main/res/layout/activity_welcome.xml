@@ -1,0 +1,92 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="net.rmitsolutions.eskool.viewmodels.UserViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".WelcomeActivity">
+
+        <ImageView
+            android:id="@+id/welcomeLogo"
+            android:layout_width="@dimen/welcome_image_width"
+            android:layout_height="@dimen/welcome_image_height"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="@dimen/padding2x"
+            android:contentDescription="@string/logo_img_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="0dp" />
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/loginCardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding"
+            android:layout_marginEnd="@dimen/padding"
+            android:layout_marginStart="@dimen/padding"
+            android:layout_marginTop="@dimen/padding"
+            android:paddingTop="@dimen/spacing8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/spacing4dp"
+            app:cardPreventCornerOverlap="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeLogo">
+
+            <include
+                android:id="@+id/loginLayout"
+                layout="@layout/include_login"
+                app:userVm="@{user}" />
+        </android.support.v7.widget.CardView>
+
+        <!--<FrameLayout
+            android:id="@+id/frameBottom"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:layout_marginBottom="0dp"
+            android:background="@color/white"
+            android:elevation="@dimen/welcome_button_bar_elevation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/welcome_app_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/app_name"
+                    android:textAlignment="center"
+                    android:textColor="@color/app_body_text_light" />
+
+            </LinearLayout>
+        </FrameLayout>-->
+
+        <include
+            layout="@layout/include_status_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/loginCardView" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

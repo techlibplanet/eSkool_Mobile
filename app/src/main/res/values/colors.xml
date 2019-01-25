@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#673AB7</color>
+    <color name="colorPrimaryDark">#522e92</color>
+    <color name="colorAccent">@color/colorPrimary</color>
+
+    <color name="window_background">#fbfbfb</color>
+    <color name="app_body_text_light">#8a000000</color>
+    <color name="app_body_text_dark">#de000000</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="white">#fff</color>
+    <color name="thick_brown">#f9dda2</color>
+    <color name="error_red">#e2211d</color>
+    <color name="light_black">#2c2c2c</color>
+    <color name="brown_pink">#6F3954</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="light_gray">#c3c9cc</color>
+    <color name="nav_drawer_title_text_color">#e8d7ef</color>
+    <color name="nav_drawer_sub_text_color">#dcc1e6</color>
+    <color name="nav_drawer_text_color">@color/nav_drawer_title_text_color</color>
+    <color name="nav_drawer_text_color_selected">@color/cyan</color>
+    <color name="nav_drawer_icon_tint">@color/nav_drawer_title_text_color</color>
+    <color name="nav_drawer_icon_tint_selected">@color/cyan</color>
+    <color name="nav_drawer_selected_item_background">#1a000000</color>
+    <color name="nav_drawer_divider_color">#8561c5</color>
+
+    <!-- dashboard logo colors -->
+    <color name="light_blue">#03A9F4</color>
+    <color name="light_grey">#DCDCDC</color>
+    <color name="green">#4CAF50</color>
+    <color name="orange">#FF9800</color>
+    <color name="red">#F44336</color>
+    <color name="purple">#9C27B0</color>
+    <color name="brown">#795548</color>
+    <color name="dark_red">#960303</color>
+    <color name="teal">#009688</color>
+    <color name="gold">#FFD700</color>
+    <color name="indigo">#3F51B5</color>
+    <color name="lime">#CDDC39</color>
+    <color name="deep_orange">#FF5722</color>
+    <color name="light_red_shade">#fdecea</color>
+    <color name="very_light_red_shade">#fdf3f2</color>
+    <color name="very_light_green_shade">#f2fdf3</color>
+    <color name="light_orange">#ffc166</color>
+    <color name="very_light_orange_shade">#fff4e5</color>
+    <color name="light_yellow_shade">#fffac7</color>
+    <color name="very_light_yellow_shade">#fffde8</color>
+    <color name="light_gold">#ffe766</color>
+    <color name="light_green">#9ce8d3</color>
+    <color name="light_green_shade">#d7f5ed</color>
+    <color name="light_brown">#f7e7b4</color>
+    <color name="very_light_brown">#faf0d2</color>
+
+    <array name="random_colors">
+        <item>@color/light_red_shade</item>
+        <item>@color/very_light_red_shade</item>
+        <item>@color/very_light_green_shade</item>
+        <item>@color/light_orange</item>
+        <item>@color/very_light_orange_shade</item>
+        <item>@color/light_yellow_shade</item>
+        <item>@color/very_light_yellow_shade</item>
+        <item>@color/light_gold</item>
+        <item>@color/light_green</item>
+        <item>@color/light_brown</item>
+        <item>@color/very_light_brown</item>
+        <item>@color/light_gray</item>
+        <item>@color/nav_drawer_title_text_color</item>
+        <item>@color/nav_drawer_selected_item_background</item>
+        <item>@color/nav_drawer_sub_text_color</item>
+    </array>
+
+
+    <array name="array_dot_active">
+        <item>@color/colorPrimaryDark</item>
+        <item>@color/colorPrimaryDark</item>
+        <item>@color/colorPrimaryDark</item>
+        <item>@color/colorPrimaryDark</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/colorPrimary</item>
+        <item>@color/colorPrimary</item>
+        <item>@color/colorPrimary</item>
+        <item>@color/colorPrimary</item>
+    </array>
+
+</resources>

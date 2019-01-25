@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="ContactDataBinding">
+
+        <import type="android.view.View" />
+
+        <variable
+            name="contactVM"
+            type="net.rmitsolutions.eskool.models.SchoolAddress" />
+    </data>
+
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".help.HelpActivity">
+
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ActionBarThemeOverlayNoActionBar">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:id="@+id/collapsing_toolbar"
+                    style="@style/SizeSpecificCollapsingToolbarLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fitsSystemWindows="true"
+                    app:contentScrim="@color/colorPrimaryDark">
+
+                    <fragment
+                        android:id="@+id/map"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_gravity="center"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        />
+
+
+                    <include layout="@layout/toolbar_pin" />
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+            </android.support.design.widget.AppBarLayout>
+
+            <include layout="@layout/include_status_view" />
+
+            <!-- Main layout -->
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/main_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:background="@color/window_background">
+
+
+
+                    <!-- content here -->
+                    <LinearLayout
+                        android:id="@+id/contactContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                       android:orientation="vertical"
+                        android:visibility="invisible">
+
+                        <android.support.constraint.ConstraintLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/padding">
+
+                            <!--<ImageView
+                                android:id="@+id/schoolLogo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/logo_img_description"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/reqel_building"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />-->
+
+                            <ImageView
+                                android:id="@+id/contactAddressImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/padding"
+                                android:layout_marginTop="@dimen/spacing20dp"
+                                android:src="@drawable/ic_map_marker"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <LinearLayout
+                                android:id="@+id/contactAddressContainer"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/padding"
+                                android:layout_marginStart="@dimen/padding"
+                                android:layout_marginTop="@dimen/padding"
+                                android:orientation="vertical"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/contactAddressImage">
+
+                                <TextView
+                                    style="@style/TitleText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{contactVM.schoolName}"
+                                    android:textColor="?colorPrimary" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing4dp"
+                                    android:text="@{contactVM.address1}"
+                                    android:visibility='@{contactVM.address1=="" ? View.GONE : View.VISIBLE}' />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing4dp"
+                                    android:text="@{contactVM.address2}"
+                                    android:visibility='@{contactVM.address2=="" ? View.GONE : View.VISIBLE}' />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing4dp"
+                                    android:text="@{contactVM.address3}"
+                                    android:visibility='@{contactVM.address3=="" ? View.GONE : View.VISIBLE}' />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing4dp"
+                                    android:text="@{contactVM.address4}"
+                                    android:visibility='@{contactVM.address4=="" ? View.GONE : View.VISIBLE}' />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing4dp"
+                                    android:text="@{contactVM.pincode}"
+                                    android:visibility='@{contactVM.pincode=="" ? View.GONE : View.VISIBLE}' />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/contactPhoneImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/padding"
+                                android:layout_marginTop="26dp"
+                                android:src="@drawable/ic_phone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/contactAddressContainer" />
+
+                            <LinearLayout
+                                android:id="@+id/contactPhoneContainer"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/padding"
+                                android:layout_marginStart="@dimen/padding"
+                                android:layout_marginTop="@dimen/padding"
+                                android:orientation="vertical"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/contactPhoneImage"
+                                app:layout_constraintTop_toBottomOf="@id/contactAddressContainer">
+
+                                <TextView
+                                    android:id="@+id/contactPhone1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="?android:attr/selectableItemBackground"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:onClick="onCallPhoneClick"
+                                    android:paddingBottom="@dimen/spacing8dp"
+                                    android:paddingTop="@dimen/spacing8dp"
+                                    android:text="@{contactVM.phone1}"
+                                    android:visibility='@{contactVM.phone1=="" ? View.GONE : View.VISIBLE}' />
+
+                                <TextView
+                                    android:id="@+id/contactPhone2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing4dp"
+                                    android:background="?android:attr/selectableItemBackground"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:onClick="onCallPhoneClick"
+                                    android:paddingBottom="@dimen/spacing8dp"
+                                    android:paddingTop="@dimen/spacing8dp"
+                                    android:text="@{contactVM.phone2}"
+                                    android:visibility='@{contactVM.phone2=="" ? View.GONE : View.VISIBLE}' />
+
+                                <TextView
+                                    android:id="@+id/contactMobile1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing4dp"
+                                    android:background="?android:attr/selectableItemBackground"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:onClick="onCallPhoneClick"
+                                    android:paddingBottom="@dimen/spacing8dp"
+                                    android:paddingTop="@dimen/spacing8dp"
+                                    android:text="@{contactVM.mobile1}"
+                                    android:visibility='@{contactVM.mobile1=="" ? View.GONE : View.VISIBLE}' />
+
+                                <TextView
+                                    android:id="@+id/contactMobile2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing4dp"
+                                    android:background="?android:attr/selectableItemBackground"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:onClick="onCallPhoneClick"
+                                    android:paddingBottom="@dimen/spacing8dp"
+                                    android:paddingTop="@dimen/spacing8dp"
+                                    android:text="@{contactVM.mobile2}"
+                                    android:visibility='@{contactVM.mobile2=="" ? View.GONE : View.VISIBLE}' />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/contactEmailImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/padding"
+                                android:src="@drawable/ic_at"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/contactPhoneContainer" />
+
+                            <TextView
+                                android:id="@+id/contactEmailContainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/padding"
+                                android:layout_marginStart="@dimen/padding"
+
+                                android:background="?android:attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="onEmailLinkClick"
+
+                                android:text="@{contactVM.emailId}"
+                                app:layout_constraintStart_toEndOf="@id/contactEmailImage"
+                                app:layout_constraintTop_toBottomOf="@id/contactPhoneContainer" />
+
+                            <ImageView
+                                android:id="@+id/contactWebImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/padding"
+                                android:layout_marginTop="24dp"
+                                android:src="@drawable/ic_web"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/contactEmailContainer" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/padding"
+                                android:layout_marginStart="@dimen/padding"
+                                android:layout_marginTop="24dp"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="onWebsiteLinkClick"
+                                android:text="@{contactVM.webSite}"
+                                app:layout_constraintStart_toEndOf="@id/contactWebImage"
+                                app:layout_constraintTop_toBottomOf="@id/contactEmailContainer" />
+
+
+                        </android.support.constraint.ConstraintLayout>
+
+
+                    </LinearLayout>
+
+                </android.support.v4.widget.NestedScrollView>
+
+
+            </android.support.design.widget.CoordinatorLayout>
+
+
+        <include layout="@layout/navdrawer" />
+    </android.support.v4.widget.DrawerLayout>
+
+</layout>

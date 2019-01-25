@@ -1,0 +1,10 @@
+<!-- drawable/call_received.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="18dp"
+    android:height="18dp"
+    android:viewportHeight="24"
+    android:viewportWidth="24">
+    <path
+        android:fillColor="@color/orange"
+        android:pathData="M20,5.41L18.59,4L7,15.59V9H5V19H15V17H8.41" />
+</vector>

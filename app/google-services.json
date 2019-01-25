@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "363636042801",
+    "firebase_url": "https://eskool-bbbeb.firebaseio.com",
+    "project_id": "eskool-bbbeb",
+    "storage_bucket": "eskool-bbbeb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363636042801:android:7af480841eef6a49",
+        "android_client_info": {
+          "package_name": "net.rmitsolutions.eskool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "363636042801-a6sljc29b5kpn72qlkb12sscs0is35df.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.rmitsolutions.eskool",
+            "certificate_hash": "abbcf01fc56dc58d7cc2bc07a6d27e46a2aac308"
+          }
+        },
+        {
+          "client_id": "363636042801-leue8cdcsg8mrt3s0443nbr8ull6lefd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmKqWBviy7fy7Py9zzuNXuOLTq0vOT8Hk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "363636042801-leue8cdcsg8mrt3s0443nbr8ull6lefd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

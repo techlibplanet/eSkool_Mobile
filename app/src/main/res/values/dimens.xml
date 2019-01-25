@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="padding">16dp</dimen>
+    <dimen name="padding2x">32dp</dimen>
+    <dimen name="padding3x">48dp</dimen>
+
+    <dimen name="spacing0dp">0dp</dimen>
+    <dimen name="spacing1dp">1dp</dimen>
+    <dimen name="spacing2dp">2dp</dimen>
+    <dimen name="spacing4dp">4dp</dimen>
+    <dimen name="spacing5dp">5dp</dimen>
+    <dimen name="spacing6dp">6dp</dimen>
+    <dimen name="spacing8dp">8dp</dimen>
+    <dimen name="spacing10dp">10dp</dimen>
+    <dimen name="spacing12dp">12dp</dimen>
+    <dimen name="spacing18dp">18dp</dimen>
+    <dimen name="spacing20dp">20dp</dimen>
+    <dimen name="spacing50dp">50dp</dimen>
+    <dimen name="spacing75dp">75dp</dimen>
+
+    <dimen name="margin40dp">40dp</dimen>
+
+    <!-- text sizes -->
+    <dimen name="app_text_size_xsmall">11sp</dimen>
+    <dimen name="app_text_size_small">12sp</dimen>
+    <dimen name="app_text_size_medium">14sp</dimen>
+    <dimen name="app_text_size_xmedium">16sp</dimen>
+    <dimen name="app_text_size_large">18sp</dimen>
+    <dimen name="app_text_size_xlarge">20sp</dimen>
+
+    <dimen name="header_bar_elevation">4dp</dimen>
+
+    <dimen name="card_corner_radius">2dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+
+    <dimen name="welcome_appbar_height">280dp</dimen> <!-- 5 * ?actionBarSize -->
+    <dimen name="welcome_image_width">180dp</dimen>
+    <dimen name="welcome_image_height">180dp</dimen>
+    <dimen name="welcome_content_padding_top">224dp</dimen> <!-- 4 * ?actionBarSize -->
+    <dimen name="welcome_button_bar_elevation">6dp</dimen>
+    <dimen name="login_title_size">@dimen/app_text_size_xlarge</dimen>
+    <dimen name="navdrawer_profile_image_size">128dp</dimen>
+    <dimen name="student_profile_image_size">200dp</dimen>
+    <dimen name="backdrop_height">256dp</dimen>
+
+
+    <!---Sliders-->
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin_bottom">20dp</dimen>
+    <dimen name="img_width_height">120dp</dimen>
+    <dimen name="slide_title">20dp</dimen>
+    <dimen name="slide_desc">16dp</dimen>
+    <dimen name="desc_padding">20dp</dimen>
+</resources>

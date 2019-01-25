@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="AttendanceDataBinding">
+
+        <variable
+            name="viewModel"
+            type="net.rmitsolutions.eskool.models.AttendanceViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/padding"
+        android:paddingEnd="@dimen/padding3x"
+        android:paddingStart="@dimen/padding3x"
+        android:paddingTop="@dimen/spacing4dp">
+
+        <LinearLayout
+            android:id="@+id/attendanceDateContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing4dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text='@{viewModel.datePresent}'
+                android:textColor="#a4b02d"
+                android:textSize="28sp" />
+
+            <TextView
+                style="@style/DescriptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{viewModel.dayPresent}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing4dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text='@{viewModel.dateAbsent}'
+                android:textColor="@color/orange"
+                android:textSize="28sp" />
+
+            <TextView
+                style="@style/DescriptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{viewModel.dayAbsent}" />
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

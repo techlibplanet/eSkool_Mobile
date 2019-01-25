@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        style="@style/SmallTitleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/padding"
+        android:paddingStart="@dimen/padding" />
+
+    <TextView
+        style="@style/DescriptionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing2dp"
+        android:paddingEnd="@dimen/padding"
+        android:paddingStart="@dimen/padding" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing2dp"
+        android:layout_marginTop="@dimen/padding"
+        android:background="@color/window_background" />
+</merge>

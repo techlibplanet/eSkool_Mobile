@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="DownloadsListDataBinding">
+
+        <variable
+            name="viewModel"
+            type="net.rmitsolutions.eskool.viewmodels.DownloadsViewModel" />
+
+        <variable
+            name="ddClickListener"
+            type="net.rmitsolutions.eskool.downloads.DownloadFileClickListener" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{ddClickListener.onDownloadFileOpenClick}"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/spacing8dp"
+        android:paddingEnd="@dimen/spacing8dp"
+        android:paddingStart="@dimen/padding"
+        android:paddingTop="@dimen/spacing8dp">
+
+        <TextView
+            android:id="@+id/downloadFileName"
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing8dp"
+            android:gravity="center_vertical"
+            android:text="@{viewModel.fileName}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/downloadFileSize"
+            style="@style/DescriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing8dp"
+            android:gravity="center_vertical|start"
+            android:text="@{viewModel.fileSize}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/downloadFileDelete"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/downloadFileName" />
+
+        <ImageButton
+            android:id="@+id/downloadFileDelete"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/delete"
+            android:gravity="top"
+            android:onClick="@{ddClickListener.onDownloadFileDeleteClick}"
+            android:src="@drawable/ic_delete_forever"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

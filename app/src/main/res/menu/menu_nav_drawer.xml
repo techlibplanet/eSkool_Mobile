@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/nav_group_1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_reqel_board"
+            android:checkable="true"
+            android:icon="@drawable/ic_dashboard"
+            android:title="@string/nav_drawer_item_reqel_board" />
+        <item
+            android:id="@+id/nav_downloads"
+            android:checkable="true"
+            android:icon="@drawable/ic_download_white"
+            android:title="@string/nav_drawer_item_downloads" />
+        <item
+            android:id="@+id/nav_contact"
+            android:checkable="true"
+            android:icon="@drawable/ic_phone_classic"
+            android:title="@string/nav_drawer_item_contact" />
+        <!--<item
+            android:id="@+id/nav_settings"
+            android:checkable="true"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/nav_drawer_item_settings" />-->
+        <item
+            android:id="@+id/nav_about"
+            android:checkable="true"
+            android:icon="@drawable/ic_info_outline"
+            android:title="@string/nav_drawer_item_about" />
+
+        <item
+            android:id="@+id/change_password"
+            android:checkable="true"
+            android:icon="@drawable/ic_chart_pie"
+            android:title="@string/nav_drawer_item_change_password" />
+    </group>
+    <group
+        android:id="@+id/nav_group_2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_logout"
+            android:checkable="true"
+            android:icon="@drawable/ic_logout_variant"
+            android:title="@string/nav_drawer_item_logout" />
+    </group>
+</menu>

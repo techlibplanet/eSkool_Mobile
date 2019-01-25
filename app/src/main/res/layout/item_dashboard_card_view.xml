@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="DashboardDataBinding">
+
+        <variable
+            name="dashBoardViewModel"
+            type="net.rmitsolutions.eskool.viewmodels.DashboardViewModel" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing8dp"
+        android:layout_marginEnd="@dimen/spacing8dp"
+        android:layout_marginStart="@dimen/spacing8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="@dimen/spacing2dp"
+        app:cardElevation="@dimen/spacing2dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding2x"
+            android:layout_marginEnd="@dimen/padding"
+            android:layout_marginStart="@dimen/padding"
+            android:layout_marginTop="@dimen/padding2x">
+
+            <ImageView
+                android:id="@+id/cv_home_dashboard_module_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@drawable/round_image"
+                android:minHeight="@dimen/padding2x"
+                android:minWidth="@dimen/padding2x"
+                app:imgSrc="@{dashBoardViewModel.moduleLogoRes}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/cv_home_dashboard_module_name"
+                style="@style/TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing8dp"
+                android:layout_marginStart="@dimen/padding"
+                android:text='@{dashBoardViewModel.moduleName, default="Profile"}'
+                android:textSize="@dimen/login_title_size"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/cv_home_dashboard_module_logo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+           <!-- <TextView
+                android:id="@+id/cv_home_dashboard_module_info_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding"
+                android:background="@drawable/small_info_icon_bg"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="i"
+                android:textSize="10sp"
+                android:textColor="@color/app_body_text_dark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cv_home_dashboard_module_logo"
+                app:layout_constraintTop_toBottomOf="@id/cv_home_dashboard_module_name" />
+-->
+            <TextView
+                android:id="@+id/cv_home_dashboard_module_desc"
+                style="@style/DescriptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text='@{dashBoardViewModel.moduleDesc, default="Child personal and grade information"}'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cv_home_dashboard_module_logo"
+                app:layout_constraintTop_toBottomOf="@id/cv_home_dashboard_module_name" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>
